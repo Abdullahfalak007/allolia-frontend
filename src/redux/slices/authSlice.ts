@@ -81,19 +81,16 @@ export const forgotPassword = createAsyncThunk(
 export const resetPassword = createAsyncThunk(
   "auth/resetPassword",
   async (
-    {
-      newPassword,
-      confirmPassword,
-    }: { newPassword: string; confirmPassword: string },
+    { token, newPassword }: { token: string; newPassword: string },
     { rejectWithValue }
   ) => {
     try {
       // Mock API call
       await new Promise((resolve) => setTimeout(resolve, 800));
-      if (newPassword && confirmPassword && newPassword === confirmPassword) {
+      if (token && newPassword) {
         return "mock-reset-success";
       } else {
-        throw new Error("Passwords do not match");
+        throw new Error("Invalid token or password");
       }
     } catch (error: any) {
       return rejectWithValue(error.message || "An error occurred");
