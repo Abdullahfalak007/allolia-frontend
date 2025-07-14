@@ -1,6 +1,6 @@
-import AuthHeader from "../../components/authHeader/AuthHeader";
-import InputField from "../../components/inputField/InputField";
 import { useForgotPassword } from "../../hooks/useForgotPassword";
+import Form from "../../components/form/Form";
+import FormHeader from "../../components/formHeader/FormHeader";
 
 const ForgotPassword = () => {
   const { email, setEmail, error, success, loading, handleSubmit } =
@@ -8,25 +8,29 @@ const ForgotPassword = () => {
 
   return (
     <div className="max-w-lg mx-auto p-6">
-      <AuthHeader />
-      {error && <div className="text-red-600 text-sm">{error}</div>}
-      {success && <div className="text-green-600 text-sm">{success}</div>}
-      <form className="space-y-4" onSubmit={handleSubmit}>
-        <InputField
-          type="email"
-          id="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <button
-          type="submit"
-          className="w-full py-2 bg-blue-600 text-white rounded-md"
-          disabled={loading}
-        >
-          {loading ? "Sending..." : "Send Reset Link"}
-        </button>
-      </form>
+      <Form
+        header={
+          <FormHeader
+            title="Forgot Password"
+            subtitle="Enter your email to receive a reset link"
+          />
+        }
+        fields={[
+          {
+            type: "email",
+            id: "email",
+            placeholder: "Email",
+            value: email,
+            onChange: (e) => setEmail(e.target.value),
+          },
+        ]}
+        onSubmit={handleSubmit}
+        buttonText="Send Reset Link"
+        buttonLoadingText="Sending..."
+        loading={loading}
+        error={error}
+        success={success}
+      />
     </div>
   );
 };
