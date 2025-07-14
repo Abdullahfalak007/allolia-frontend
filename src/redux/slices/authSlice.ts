@@ -1,6 +1,7 @@
 // src/redux/authSlice.ts
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+const API_URL = process.env.REACT_APP_API_URL;
 
 // Define the initial state of authentication
 interface AuthState {
@@ -25,15 +26,16 @@ export const loginUser = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      // Mock API call
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      if (email === "test@example.com" && password === "password") {
-        return "mock-jwt-token";
-      } else {
-        throw new Error("Invalid credentials");
-      }
+      const response = await axios.post(
+        `${API_URL}/login`,
+        { email, password },
+        { withCredentials: true }
+      );
+      return response.data;
     } catch (error: any) {
-      return rejectWithValue(error.message || "An error occurred");
+      return rejectWithValue(
+        error.response?.data?.message || error.message || "An error occurred"
+      );
     }
   }
 );
@@ -46,15 +48,16 @@ export const registerUser = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      // Mock API call
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      if (email && password) {
-        return "mock-register-success";
-      } else {
-        throw new Error("Please fill in all fields");
-      }
+      const response = await axios.post(
+        `${API_URL}/register`,
+        { email, password },
+        { withCredentials: true }
+      );
+      return response.data;
     } catch (error: any) {
-      return rejectWithValue(error.message || "An error occurred");
+      return rejectWithValue(
+        error.response?.data?.message || error.message || "An error occurred"
+      );
     }
   }
 );
@@ -64,15 +67,14 @@ export const forgotPassword = createAsyncThunk(
   "auth/forgotPassword",
   async ({ email }: { email: string }, { rejectWithValue }) => {
     try {
-      // Mock API call
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      if (email) {
-        return "mock-forgot-success";
-      } else {
-        throw new Error("Please enter your email");
-      }
+      const response = await axios.post(`${API_URL}/forgotten-password`, {
+        email,
+      });
+      return response.data;
     } catch (error: any) {
-      return rejectWithValue(error.message || "An error occurred");
+      return rejectWithValue(
+        error.response?.data?.message || error.message || "An error occurred"
+      );
     }
   }
 );
@@ -85,33 +87,15 @@ export const resetPassword = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      // Mock API call
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      if (token && newPassword) {
-        return "mock-reset-success";
-      } else {
-        throw new Error("Invalid token or password");
-      }
+      const response = await axios.post(`${API_URL}/reset-password`, {
+        token,
+        new_password: newPassword,
+      });
+      return response.data;
     } catch (error: any) {
-      return rejectWithValue(error.message || "An error occurred");
-    }
-  }
-);
-
-// Async thunk to handle OTP verification
-export const verifyOtp = createAsyncThunk(
-  "auth/verifyOtp",
-  async ({ otp }: { otp: string }, { rejectWithValue }) => {
-    try {
-      // Mock API call
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      if (otp === "123456") {
-        return "mock-otp-success";
-      } else {
-        throw new Error("Invalid OTP");
-      }
-    } catch (error: any) {
-      return rejectWithValue(error.message || "An error occurred");
+      return rejectWithValue(
+        error.response?.data?.message || error.message || "An error occurred"
+      );
     }
   }
 );
@@ -172,18 +156,6 @@ const authSlice = createSlice({
         state.loading = false;
       })
       .addCase(resetPassword.rejected, (state, action) => {
-        state.error = action.payload as string;
-        state.loading = false;
-      })
-
-      // OTP
-      .addCase(verifyOtp.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(verifyOtp.fulfilled, (state) => {
-        state.loading = false;
-      })
-      .addCase(verifyOtp.rejected, (state, action) => {
         state.error = action.payload as string;
         state.loading = false;
       });
