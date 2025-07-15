@@ -23,7 +23,6 @@ const Login = () => {
         <div className="flex items-center mb-6">
           {/* Logo with Text on Right */}
           <img src={logos.logo_blue} alt="Logo" className="h-8 mr-2" />
-          <span className="text-2xl font-bold text-primary">Allolia</span>
         </div>
 
         <Form
@@ -61,7 +60,10 @@ const Login = () => {
                 <input type="checkbox" className="form-checkbox mr-1" />{" "}
                 Remember for 30 days
               </label>
-              <a href="#" className="text-sm text-primary hover:underline">
+              <a
+                href="forgot-password"
+                className="text-sm text-primary hover:underline"
+              >
                 Forgot password?
               </a>
             </div>
@@ -79,7 +81,7 @@ const Login = () => {
         {/* Sign-up Link */}
         <div className="mt-4 text-center">
           <span className="text-sm text-gray-600">Don't have an account? </span>
-          <a href="#" className="text-sm text-primary hover:underline">
+          <a href="/register" className="text-sm text-primary hover:underline">
             Sign up
           </a>
         </div>
