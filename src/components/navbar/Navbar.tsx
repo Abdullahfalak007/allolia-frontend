@@ -20,6 +20,29 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex flex-nowrap items-center space-x-4 md:space-x-8 min-w-0">
           {menuItems.map((item) => {
             const isActive = pathname === item.path;
+            // Special handling for 'Nos offres' to scroll to offers section
+            if (item.name === "Nos offres") {
+              return (
+                <a
+                  key={item.name}
+                  href="#offers-section"
+                  className={`text-white transition-colors ${
+                    isActive ? "font-semibold" : "font-normal opacity-100"
+                  } hover:opacity-70`}
+                  onClick={(e) => {
+                    if (pathname === "/") {
+                      e.preventDefault();
+                      const el = document.getElementById("offers-section");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }
+                  }}
+                >
+                  {item.name}
+                </a>
+              );
+            }
             return (
               <Link
                 key={item.name}

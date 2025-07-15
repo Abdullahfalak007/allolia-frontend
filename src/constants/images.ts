@@ -3,6 +3,7 @@
 export const images = {
   heroBg: require("../assets/images/hero_bg.jpg"),
   illustration: require("../assets/images/illustration.png"),
+  serviceClient: require("../assets/images/service_client.jpg"),
 };
 
 export const icons = {
