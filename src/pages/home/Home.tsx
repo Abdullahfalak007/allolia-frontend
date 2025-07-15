@@ -1,7 +1,15 @@
+// src/pages/home/Home.tsx
+import React from "react";
+import Navbar from "../../components/navbar/Navbar";
+
 const Home = () => (
-  <div className="flex items-center justify-center min-h-screen bg-gray-50">
-    <h1 className="text-3xl font-bold">Welcome to the Home Page</h1>
-  </div>
+  <>
+    <Navbar />
+    <div className="pt-16">
+      {/* ← on décale le contenu sous la navbar */}
+      {/* ... ton Hero, Sections, etc. */}
+    </div>
+  </>
 );
 
 export default Home;
