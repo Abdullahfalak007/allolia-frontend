@@ -111,7 +111,7 @@ const Form: React.FC<FormProps> = ({
         {extra && extra} {/* <-- Render extra content above the button */}
         <Button
           type="submit"
-          className="w-full py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-all"
+          className="w-full py-2 bg-primary text-white rounded-md hover:bg-secondary transition-all"
           disabled={loading}
         >
           {loading && buttonLoadingText ? buttonLoadingText : buttonText}

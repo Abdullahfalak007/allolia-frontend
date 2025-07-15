@@ -4,7 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#4F46E5",
+        primary: "#4B21D6", // Primary Blue
+        secondary: "#3B00FF", // Secondary Blue
+      },
+      fontFamily: {
+        sans: ["Gotham", "ui-sans-serif", "system-ui", "sans-serif"],
       },
     },
   },

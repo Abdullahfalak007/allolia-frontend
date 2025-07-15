@@ -1,7 +1,7 @@
 import { useLogin } from "../../hooks/useLogin";
 import Form from "../../components/form/Form";
 import FormHeader from "../../components/formHeader/FormHeader";
-import { images } from "../../constants/images";
+import { icons, images, logos } from "../../constants/images";
 import Button from "../../components/button/Button";
 
 const Login = () => {
@@ -17,15 +17,13 @@ const Login = () => {
   } = useLogin();
 
   return (
-    <div className="min-h-screen flex bg-purple-50 overflow-hidden">
+    <div className="min-h-screen flex bg-primary/5 overflow-hidden">
       {/* Left Section: Login Form */}
       <div className="flex flex-col justify-center bg-white px-8 w-full md:w-1/2 min-w-0 transition-all duration-300">
         <div className="flex items-center mb-6">
           {/* Logo with Text on Right */}
-          <img src={images.logo_purple} alt="Logo" className="h-8 mr-2" />
-          <span className="text-2xl font-bold text-purple-600">
-            TheCubeFactory
-          </span>
+          <img src={logos.logo_blue} alt="Logo" className="h-8 mr-2" />
+          <span className="text-2xl font-bold text-primary">Allolia</span>
         </div>
 
         <Form
@@ -60,10 +58,10 @@ const Login = () => {
           extra={
             <div className="flex justify-between items-center mt-2">
               <label className="inline-flex items-center text-sm">
-                <input type="checkbox" className="form-checkbox" /> Remember for
-                30 days
+                <input type="checkbox" className="form-checkbox mr-1" />{" "}
+                Remember for 30 days
               </label>
-              <a href="#" className="text-sm text-purple-600 hover:underline">
+              <a href="#" className="text-sm text-primary hover:underline">
                 Forgot password?
               </a>
             </div>
@@ -72,8 +70,8 @@ const Login = () => {
 
         {/* Google Sign-in with Google Icon */}
         <div className="mt-4 w-full max-w-sm mx-auto">
-          <Button className="w-full py-2 bg-white text-purple-600 border border-purple-600 rounded-md hover:bg-purple-50 transition-all flex items-center justify-center space-x-3">
-            <img src={images.google_icon} alt="Google" className="h-5 w-5" />
+          <Button className="w-full py-2 bg-white text-primary border border-primary rounded-md hover:bg-primary/10 transition-all flex items-center justify-center space-x-3">
+            <img src={icons.google_icon} alt="Google" className="h-5 w-5" />
             <span>Sign in with Google</span>
           </Button>
         </div>
@@ -81,7 +79,7 @@ const Login = () => {
         {/* Sign-up Link */}
         <div className="mt-4 text-center">
           <span className="text-sm text-gray-600">Don't have an account? </span>
-          <a href="#" className="text-sm text-purple-600 hover:underline">
+          <a href="#" className="text-sm text-primary hover:underline">
             Sign up
           </a>
         </div>
