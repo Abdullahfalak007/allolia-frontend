@@ -9,15 +9,15 @@ const Navbar: React.FC = () => {
   const { pathname } = useLocation();
 
   return (
-    <nav className="fixed top-4 left-0 right-0 z-50 px-2 sm:px-4 md:px-8">
-      <div className="max-w-7xl mx-auto bg-primary rounded-full flex flex-wrap items-center justify-between px-4 sm:px-6 md:px-8 py-3 md:py-4 overflow-x-auto">
+    <nav className="fixed top-4 left-0 right-0 z-50 px-2 sm:px-4 md:px-8 lg:mx-20">
+      <div className="max-w-7xl mx-auto bg-primary rounded-full flex flex-nowrap items-center justify-between px-2 sm:px-6 md:px-8 py-3 md:py-4 overflow-x-auto">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
           <img src={logos.logo_white} alt="Allolia" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop menu */}
-        <div className="hidden sm:flex flex-wrap items-center space-x-4 md:space-x-8 min-w-0">
+        <div className="hidden md:flex flex-nowrap items-center space-x-4 md:space-x-8 min-w-0">
           {menuItems.map((item) => {
             const isActive = pathname === item.path;
             return (
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Auth links (desktop) */}
-        <div className="hidden sm:flex items-center space-x-2 md:space-x-4 min-w-0">
+        <div className="hidden md:flex items-center space-x-2 md:space-x-4 min-w-0">
           <Link
             to="/register"
             className="text-white font-normal hover:underline transition"
@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="sm:hidden p-2 text-white hover:bg-primary/80 rounded-full"
+          className="md:hidden p-2 text-white hover:bg-primary/80 rounded-full"
         >
           {open ? (
             <svg
@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="sm:hidden mt-2 bg-primary rounded-lg py-4 space-y-2 px-4">
+        <div className="md:hidden mt-2 bg-primary rounded-lg py-4 space-y-2 px-4">
           {menuItems.map((item) => {
             const isActive = pathname === item.path;
             return (

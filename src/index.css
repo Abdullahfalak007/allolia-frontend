@@ -143,3 +143,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* ========================================================================
+   .hero‑shape: frosted‑glass card *with* two inward‑curves (top‑right & bottom‑left)
+   ======================================================================== */
+
+.hero-shape {
+  /* background + blur */
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(14px);
+
+  /* keep all corners rounded at 32px */
+  border-radius: 32px;
+
+  /* clip-path describing concave TR & BL corners of radius 32px */
+  -webkit-clip-path: path(
+    "M0,0 
+     H calc(100% - 32px) 
+     A32 32 0 0 1 100% 32px 
+     V calc(100% - 32px) 
+     A32 32 0 0 1 calc(100% - 32px) 100% 
+     H32px 
+     A32 32 0 0 1 0 calc(100% - 32px) 
+     Z"
+  );
+  clip-path: path(
+    "M0,0 
+     H calc(100% - 32px) 
+     A32 32 0 0 1 100% 32px 
+     V calc(100% - 32px) 
+     A32 32 0 0 1 calc(100% - 32px) 100% 
+     H32px 
+     A32 32 0 0 1 0 calc(100% - 32px) 
+     Z"
+  );
+}
