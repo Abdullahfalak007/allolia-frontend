@@ -16,6 +16,7 @@ export const images = {
   client1: require("../assets/clients/client1.png"),
   client2: require("../assets/clients/client2.png"),
   client3: require("../assets/clients/client3.png"),
+  testimonialCardBg: require("../assets/images/testimonial_card_bg.png"),
 };
 
 export const icons = {
