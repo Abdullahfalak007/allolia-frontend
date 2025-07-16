@@ -7,6 +7,11 @@ export const images = {
   packPremiumBg: require("../assets/images/pack_premium_bg.png"),
   serviceClient: require("../assets/images/service_client.jpg"),
   hero_shape: require("../assets/images/hero_shape.png"),
+  partner1: require("../assets/partners/partner1.png"),
+  partner2: require("../assets/partners/partner2.png"),
+  partner3: require("../assets/partners/partner3.png"),
+  partner4: require("../assets/partners/partner4.png"),
+  partner5: require("../assets/partners/partner5.png"),
 };
 
 export const icons = {
