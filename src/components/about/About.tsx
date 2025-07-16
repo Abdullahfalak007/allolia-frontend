@@ -6,7 +6,7 @@ const AboutSection: React.FC = () => {
     <section
       id="about-section"
       className="relative bg-cover bg-center"
-      style={{ backgroundImage: `url(${images.serviceClient})` }}
+      style={{ backgroundImage: `url(${images.aboutSectionBackground})` }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
