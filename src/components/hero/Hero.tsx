@@ -1,7 +1,7 @@
 // src/components/hero/Hero.tsx
 import React from "react";
 import Button from "../button/Button";
-import { images } from "../../constants/images";
+import { images, icons, logos } from "../../constants/images";
 
 const Hero: React.FC = () => {
   return (
@@ -48,42 +48,76 @@ const Hero: React.FC = () => {
           <div className="mt-6 flex justify-center md:justify-start space-x-4 flex-wrap">
             {/* Blue button */}
             <button className="inline-flex items-center justify-center bg-secondary text-white px-6 py-3 rounded-full text-sm font-normal hover:opacity-90 transition">
-              NOS OFFRES&nbsp;<span className="text-lg">→</span>
+              NOS OFFRES&nbsp;
+              <img
+                src={icons.arrow_icon_to_right_white}
+                alt="arrow"
+                className="w-5 h-5"
+              />
             </button>
 
             {/* White button */}
             <button className="inline-flex items-center justify-center bg-white text-primary px-6 py-3 rounded-full text-sm font-normal hover:bg-gray-100 transition">
-              CONTACTEZ‑NOUS&nbsp;<span className="text-lg">→</span>
+              CONTACTEZ‑NOUS&nbsp;
+              <img
+                src={icons.arrow_icon_to_right_blue}
+                alt="arrow"
+                className="w-5 h-5"
+              />
             </button>
           </div>
         </div>
 
-        {/* Right card with concave corners */}
+        {/* Right card with hero shape image, frosted glass effect, and overlayed content */}
         <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end">
-          <div className="relative">
-            <div className="hero-shape mt-48 p-12 max-w-sm min-h-md text-white relative">
-              <h3 className="text-xl font-normal leading-snug">
+          <div className="relative mt-48 max-w-sm w-full">
+            {/* Hero shape image as background, semi-transparent */}
+            <img
+              src={images.hero_shape}
+              alt="Hero Shape"
+              className="absolute top-0 left-0 w-full h-full object-cover"
+              style={{ opacity: 0, zIndex: 1 }}
+            />
+            {/* Frosted glass overlay, masked to hero shape */}
+            <div
+              className="absolute top-0 left-0 w-full h-full pointer-events-none"
+              style={{
+                zIndex: 2,
+                WebkitMaskImage: `url(${images.hero_shape})`,
+                maskImage: `url(${images.hero_shape})`,
+                WebkitMaskRepeat: "no-repeat",
+                maskRepeat: "no-repeat",
+                WebkitMaskSize: "cover",
+                maskSize: "cover",
+                background: "rgba(255,255,255,0.3)",
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+              }}
+            ></div>
+            {/* Content overlays above shape and glass */}
+            <div className="relative z-10 flex flex-col justify-center items-start p-12 text-white h-full">
+              <h3 className="text-2xl font-normal leading-snug mb-2 -mt-8">
                 Votre plateforme de gestion.
                 <br />
-                Service client 7/7
+                <span className="font-normal mt-2">Service client 7/7</span>
               </h3>
-              <p className="mt-2 text-sm text-white/90">
+              <p className="mt-2 text-base text-white mb-6">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor…
+                eiusmod tempor...
               </p>
               {/* dots & badge */}
-              <div className="mt-6 flex items-center justify-end">
-                <div className="flex items-center bg-secondary rounded-full px-4 py-1 min-w-[160px]">
-                  <div className="flex space-x-2 mr-4">
+              <div className="flex items-center justify-end w-full">
+                <div className="flex items-center bg-secondary rounded-full px-2 py-1 -mr-6 min-w-[180px]">
+                  <div className="flex space-x-2 mr-2">
                     {[0, 1, 2].map((i) => (
                       <span
                         key={i}
-                        className="w-5 h-5 bg-white rounded-full"
+                        className="w-7 h-7 bg-white rounded-full"
                       ></span>
                     ))}
                   </div>
                   <div className="flex flex-col text-left">
-                    <span className="text-black font-normal text-base leading-none">
+                    <span className="text-black font-normal text-xs text-base leading-none">
                       100K+
                     </span>
                     <span className="text-black text-xs leading-none">
@@ -92,22 +126,13 @@ const Hero: React.FC = () => {
                   </div>
                 </div>
               </div>
-
-              {/* arrow circle sits inside the top‑right bite */}
-              <span className="absolute top-1 right-1 bg-secondary w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
-                <svg
-                  className="w-6 h-6 text-black -rotate-45"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
+              {/* Arrow circle in top-right */}
+              <span className="absolute -top-1 -right-1 bg-secondary w-12 h-12 rounded-full flex items-center justify-center shadow-lg z-20">
+                <img
+                  src={icons.arrow_icon_to_left_bottom_white}
+                  alt="arrow"
+                  className="w-6 h-6"
+                />
               </span>
             </div>
           </div>

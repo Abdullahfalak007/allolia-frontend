@@ -4,10 +4,16 @@ export const images = {
   heroBg: require("../assets/images/hero_bg.jpg"),
   illustration: require("../assets/images/illustration.png"),
   serviceClient: require("../assets/images/service_client.jpg"),
+  hero_shape: require("../assets/images/hero_shape.png"),
 };
 
 export const icons = {
   google_icon: require("../assets/icons/google_icon.png"),
+  arrow_icon_to_right_white: require("../assets/icons/arrow_icon_to_right_white.png"),
+  arrow_icon_to_left_bottom_white: require("../assets/icons/arrow_icon_to_left_bottom_white.png"),
+  arrow_icon_to_left_top_white: require("../assets/icons/arrow_icon_to_left_top_white.png"),
+  arrow_icon_to_right_blue: require("../assets/icons/arrow_icon_to_right_blue.png"),
+  arrow_icon_to_right_top_white: require("../assets/icons/arrow_icon_to_right_top_white.png"),
 };
 
 export const logos = {
