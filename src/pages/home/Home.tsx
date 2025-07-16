@@ -7,6 +7,7 @@ import Partners from "../../components/partners/Partners";
 import About from "../../components/about/About";
 import Testimonials from "../../components/testimonials/Testimonials";
 import Contact from "../../components/contact/Contact";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => (
   <>
@@ -18,6 +19,7 @@ const Home = () => (
       <About />
       <Testimonials />
       <Contact />
+      <Footer />
     </div>
   </>
 );

@@ -30,8 +30,11 @@ export const icons = {
   arrow_icon_to_right_top_white: require("../assets/icons/arrow_icon_to_right_top_white.png"),
   calendly: require("../assets/icons/calendly.png"),
   facebook: require("../assets/icons/facebook.png"),
+  facebookWhite: require("../assets/icons/facebook_white.png"),
   linkedin: require("../assets/icons/linkedin.png"),
+  linkedinWhite: require("../assets/icons/linkedin_white.png"),
   twitter: require("../assets/icons/twitter.png"),
+  twitterWhite: require("../assets/icons/twitter_white.png"),
 };
 
 export const logos = {

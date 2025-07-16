@@ -36,7 +36,7 @@ const ContactSection: React.FC = () => {
 
             {/* Main text: increased top padding for extra gap */}
             <div className="p-6 pt-60 text-white">
-              <h3 className="text-2xl font-semibold mb-2">
+              <h3 className="text-2xl font-normal mb-2">
                 Your Partner in Business Growth
               </h3>
               <p className="text-sm">
