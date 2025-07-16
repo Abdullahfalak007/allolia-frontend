@@ -13,10 +13,15 @@ export const images = {
   partner4: require("../assets/partners/partner4.png"),
   partner5: require("../assets/partners/partner5.png"),
   aboutSectionBackground: require("../assets/images/about_section_background.jpg"),
+  client1: require("../assets/clients/client1.png"),
+  client2: require("../assets/clients/client2.png"),
+  client3: require("../assets/clients/client3.png"),
 };
 
 export const icons = {
   google_icon: require("../assets/icons/google_icon.png"),
+  star: require("../assets/icons/star.png"),
+  arrow: require("../assets/icons/arrow.png"),
   arrow_icon_to_right_white: require("../assets/icons/arrow_icon_to_right_white.png"),
   arrow_icon_to_left_bottom_white: require("../assets/icons/arrow_icon_to_left_bottom_white.png"),
   arrow_icon_to_left_top_white: require("../assets/icons/arrow_icon_to_left_top_white.png"),
