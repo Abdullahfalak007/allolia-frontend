@@ -43,6 +43,29 @@ const Navbar: React.FC = () => {
                 </a>
               );
             }
+            // Special handling for 'A propos' to scroll to about section
+            if (item.name === "A propos") {
+              return (
+                <a
+                  key={item.name}
+                  href="#about-section"
+                  className={`text-white transition-colors ${
+                    isActive ? "font-semibold" : "font-normal opacity-100"
+                  } hover:opacity-70`}
+                  onClick={(e) => {
+                    if (pathname === "/") {
+                      e.preventDefault();
+                      const el = document.getElementById("about-section");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }
+                  }}
+                >
+                  {item.name}
+                </a>
+              );
+            }
             return (
               <Link
                 key={item.name}

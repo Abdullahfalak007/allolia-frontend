@@ -12,6 +12,7 @@ export const images = {
   partner3: require("../assets/partners/partner3.png"),
   partner4: require("../assets/partners/partner4.png"),
   partner5: require("../assets/partners/partner5.png"),
+  aboutSectionBackground: require("../assets/images/about_section_background.jpg"),
 };
 
 export const icons = {
