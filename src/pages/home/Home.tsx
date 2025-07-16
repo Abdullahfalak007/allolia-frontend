@@ -6,6 +6,7 @@ import Offers from "../../components/offers/Offers";
 import Partners from "../../components/partners/Partners";
 import About from "../../components/about/About";
 import Testimonials from "../../components/testimonials/Testimonials";
+import Contact from "../../components/contact/Contact";
 
 const Home = () => (
   <>
@@ -16,6 +17,7 @@ const Home = () => (
       <Partners />
       <About />
       <Testimonials />
+      <Contact />
     </div>
   </>
 );

@@ -28,6 +28,10 @@ export const icons = {
   arrow_icon_to_left_top_white: require("../assets/icons/arrow_icon_to_left_top_white.png"),
   arrow_icon_to_right_blue: require("../assets/icons/arrow_icon_to_right_blue.png"),
   arrow_icon_to_right_top_white: require("../assets/icons/arrow_icon_to_right_top_white.png"),
+  calendly: require("../assets/icons/calendly.png"),
+  facebook: require("../assets/icons/facebook.png"),
+  linkedin: require("../assets/icons/linkedin.png"),
+  twitter: require("../assets/icons/twitter.png"),
 };
 
 export const logos = {
