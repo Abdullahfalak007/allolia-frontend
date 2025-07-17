@@ -20,6 +20,12 @@ module.exports = {
       animation: {
         marquee: "marquee 20s linear infinite",
       },
+      screens: {
+        tablet: "640px", // already in Tailwind as sm
+        laptop: "1024px", // md
+        laptop1080: "1080px",
+        laptop1440: "1440px",
+      },
     },
   },
   plugins: [],

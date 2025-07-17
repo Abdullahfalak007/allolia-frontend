@@ -82,7 +82,7 @@ const Footer: React.FC = () => (
     </div>
 
     {/* Bottom row aligned under each column */}
-    <div className="bg-primary py-8">
+    <div className="bg-secondary py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-32 grid grid-cols-1 md:grid-cols-4 items-center gap-4">
         {/* Col 1: expertise blurb */}
         <p className="text-xs text-white/70 text-center md:text-left">
