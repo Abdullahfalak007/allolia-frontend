@@ -8,7 +8,7 @@ export interface Testimonial {
   avatar: string; // client portrait
   review: string;
   percent: number; // e.g. 98
-  rating: number; // number of stars (1–5)
+  rating: number; // number of stars (1–4)
 }
 
 export const testimonials: Testimonial[] = [
@@ -19,7 +19,7 @@ export const testimonials: Testimonial[] = [
     avatar: images.client1, // add this to images.ts
     review: "Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod",
     percent: 98,
-    rating: 5,
+    rating: 4,
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ export const testimonials: Testimonial[] = [
     review:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
     percent: 100,
-    rating: 5,
+    rating: 4,
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ export const testimonials: Testimonial[] = [
     avatar: images.client3,
     review: "Lorem ipsum dolor sit amet, consectetur adipiscing",
     percent: 93,
-    rating: 5,
+    rating: 4,
   },
   {
     id: 4,
@@ -47,17 +47,17 @@ export const testimonials: Testimonial[] = [
     avatar: images.client1, // add this to images.ts
     review: "Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod",
     percent: 98,
-    rating: 5,
+    rating: 4,
   },
   {
-    id: 5,
+    id: 4,
     name: "Muniir Charosky",
     title: "Multi-CEO indépendant aka Jesus",
     avatar: images.client2,
     review:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
     percent: 100,
-    rating: 5,
+    rating: 4,
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ export const testimonials: Testimonial[] = [
     avatar: images.client3,
     review: "Lorem ipsum dolor sit amet, consectetur adipiscing",
     percent: 93,
-    rating: 5,
+    rating: 4,
   },
   // …you can add more here
 ];

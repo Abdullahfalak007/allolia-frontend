@@ -32,7 +32,7 @@ const Testimonials: React.FC = () => {
       <div className="relative">
         {/* Left arrow */}
         <button
-          onClick={() => scrollBy(-300)}
+          onClick={() => scrollBy(-400)}
           className="hidden md:flex absolute left-[-48px] top-1/2 -translate-y-1/2 p-2 bg-white rounded-full shadow-md z-10"
         >
           <img
@@ -45,7 +45,7 @@ const Testimonials: React.FC = () => {
         {/* Scrollable cards */}
         <div
           ref={containerRef}
-          className="flex space-x-6 overflow-x-auto px-4 py-8 scroll-smooth"
+          className="flex space-x-12 overflow-x-auto px-4 py-8 scroll-smooth"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {testimonials.map((t) => {
@@ -63,11 +63,11 @@ const Testimonials: React.FC = () => {
                 }}
               >
                 {/* Avatar */}
-                <div className="absolute -top-2 -left-2">
+                <div className="absolute -top-2 -left-4">
                   <img
                     src={t.avatar}
                     alt={t.name}
-                    className="w-16 h-16 rounded-full object-cover border-4 border-white"
+                    className="w-20 h-20 rounded-full object-cover"
                   />
                 </div>
 
@@ -78,24 +78,24 @@ const Testimonials: React.FC = () => {
 
                 {/* Content: name/title below avatar */}
                 <div className="mt-10">
-                  <h3 className="text-lg">
+                  <h3 className="text-2xl">
                     <span className="font-semibold">{firstName}</span>{" "}
                     <span className="font-normal">{restName.join(" ")}</span>
                   </h3>
-                  <p className="text-sm text-secondary mb-4">{t.title}</p>
+                  <p className="text-md text-secondary mb-4">{t.title}</p>
                   <p className="text-gray-600 text-sm">{t.review}</p>
                 </div>
 
                 {/* Footer: percent + stars */}
                 <div className="mt-6 flex items-center justify-between">
-                  <span className="text-2xl font-bold">{t.percent}%</span>
+                  <span className="text-5xl font-normal">{t.percent}%</span>
                   <div className="flex space-x-1">
                     {Array.from({ length: t.rating }).map((_, i) => (
                       <img
                         key={i}
                         src={icons.star}
                         alt="star"
-                        className="w-5 h-5"
+                        className="w-6 h-6"
                       />
                     ))}
                   </div>
@@ -107,7 +107,7 @@ const Testimonials: React.FC = () => {
 
         {/* Right arrow */}
         <button
-          onClick={() => scrollBy(300)}
+          onClick={() => scrollBy(400)}
           className="hidden md:flex absolute right-[-48px] top-1/2 -translate-y-1/2 p-2 bg-white rounded-full shadow-md z-10"
         >
           <img src={icons.arrow} alt="Suivant" className="w-6 h-6" />
