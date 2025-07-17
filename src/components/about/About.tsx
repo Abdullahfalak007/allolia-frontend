@@ -1,5 +1,5 @@
 import React from "react";
-import { images, icons } from "../../constants/images";
+import { images } from "../../constants/images";
 
 const AboutSection: React.FC = () => {
   return (

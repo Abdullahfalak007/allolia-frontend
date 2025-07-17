@@ -1,14 +1,7 @@
 // src/components/InputField/InputField.tsx
 
 import React from "react";
-
-interface InputFieldProps {
-  type: string;
-  id: string;
-  placeholder: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+import { InputFieldProps } from "../../constants/types";
 
 const InputField: React.FC<InputFieldProps> = ({
   type,

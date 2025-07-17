@@ -1,10 +1,5 @@
 import React from "react";
-
-interface FormHeaderProps {
-  title: string;
-  subtitle?: string;
-  className?: string;
-}
+import { FormHeaderProps } from "../../constants/types";
 
 const FormHeader: React.FC<FormHeaderProps> = ({
   title,

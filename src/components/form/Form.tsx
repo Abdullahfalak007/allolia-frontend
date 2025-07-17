@@ -2,27 +2,7 @@ import React from "react";
 import InputField from "../inputField/InputField";
 import { ErrorMessage } from "../errorMessage/ErrorMessage";
 import Button from "../button/Button";
-
-export interface FormField {
-  type: string;
-  id: string;
-  placeholder: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-interface FormProps {
-  fields: FormField[];
-  onSubmit: (e: React.FormEvent) => void;
-  buttonText: string;
-  loading?: boolean;
-  error?: string;
-  success?: string;
-  children?: React.ReactNode;
-  buttonLoadingText?: string;
-  header?: React.ReactNode;
-  extra?: React.ReactNode; // <-- Add this line
-}
+import { FormProps } from "../../constants/types";
 
 const Form: React.FC<FormProps> = ({
   fields,
@@ -34,7 +14,7 @@ const Form: React.FC<FormProps> = ({
   children,
   buttonLoadingText,
   header,
-  extra, // <-- Add this line
+  extra,
 }) => {
   return (
     <div className="space-y-6 w-full max-w-sm mx-auto">

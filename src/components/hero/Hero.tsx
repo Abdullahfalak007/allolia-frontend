@@ -1,7 +1,6 @@
 // src/components/hero/Hero.tsx
 import React from "react";
-import Button from "../button/Button";
-import { images, icons, logos } from "../../constants/images";
+import { images, icons } from "../../constants/images";
 
 const Hero: React.FC = () => {
   return (
