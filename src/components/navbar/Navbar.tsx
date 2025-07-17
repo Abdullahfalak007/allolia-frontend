@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center space-x-4">
           <Link
             to="/register"
-            className="bg-secondary text-white hover:bg-white hover:text-secondary rounded-full px-4 py-1 transition hover:bg-secondary hover:text-white"
+            className="bg-secondary text-white hover:text-secondary hover:bg-white rounded-full px-4 py-1 transition"
             style={{ fontFamily: "Poppins", fontSize: 14, fontWeight: 200 }}
           >
             S’inscrire
