@@ -57,7 +57,7 @@ const ContactSection: React.FC = () => (
           className="inline-flex items-center bg-secondary text-white px-6 py-2 sm:px-8 sm:py-3 rounded-full text-sm sm:text-base font-normal hover:opacity-90 transition mb-8"
         >
           PRENDRE RENDEZ‑VOUS
-          <img src={icons.calendly} alt="Calendly" className="h-6 w-12 mx-2" />
+          <img src={icons.calendly} alt="Calendly" className="h-6 w-20 mx-2" />
           <span className="text-xl sm:text-2xl">&rarr;</span>
         </a>
 
