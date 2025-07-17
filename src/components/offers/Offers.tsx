@@ -43,7 +43,7 @@ const OffersSection: React.FC = () => {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-end -mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
           {/* Pack Basic */}
           <div
             className="relative overflow-hidden flex flex-col p-6 text-secondary rounded-3xl"

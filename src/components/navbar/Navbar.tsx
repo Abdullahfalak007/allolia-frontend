@@ -104,7 +104,7 @@ const Navbar: React.FC = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 text-white hover:bg-primary/80 rounded-full"
+          className="md:hidden p-2 text-white hover:bg-secondary/80 rounded-full"
         >
           {open ? (
             <svg
@@ -140,7 +140,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden mt-2 bg-primary rounded-xl py-4 px-4 space-y-3 text-sm">
+        <div className="md:hidden mt-2 bg-secondary rounded-xl py-4 px-4 space-y-3 text-sm">
           {menuItems.map((item) => {
             const isActive = pathname === item.path;
             return (
