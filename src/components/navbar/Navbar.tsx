@@ -1,5 +1,4 @@
-// src/components/navbar/Navbar.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { logos } from "../../constants/images";
 import { menuItems } from "../../constants/menuItems";
@@ -8,34 +7,41 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
 
+  // Optional: Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [open]);
+
   return (
     <nav className="fixed top-4 left-0 right-0 z-50 px-2 sm:px-4 md:px-8 lg:mx-20">
-      <div className="max-w-7xl mx-auto bg-secondary rounded-full flex flex-nowrap items-center justify-between px-2 sm:px-6 md:px-8 py-3 md:py-4 overflow-x-auto">
+      <div className="max-w-7xl mx-auto bg-secondary rounded-full flex items-center justify-between px-3 sm:px-6 md:px-8 py-3 md:py-4 overflow-x-auto">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
           <img src={logos.logo_white} alt="Allolia" className="h-8 w-auto" />
         </Link>
 
-        {/* Desktop menu */}
-        <div className="hidden md:flex flex-nowrap items-center space-x-4 md:space-x-8 min-w-0">
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center space-x-6 min-w-0">
           {menuItems.map((item) => {
             const isActive = pathname === item.path;
-            // Special handling for 'Nos offres' to scroll to offers section
+
             if (item.name === "Nos offres") {
               return (
                 <a
                   key={item.name}
                   href="#offers-section"
-                  className={`text-white transition-colors ${
+                  className={`text-white transition ${
                     isActive ? "font-semibold" : "font-normal opacity-100"
                   } hover:opacity-70`}
                   onClick={(e) => {
                     if (pathname === "/") {
                       e.preventDefault();
                       const el = document.getElementById("offers-section");
-                      if (el) {
-                        el.scrollIntoView({ behavior: "smooth" });
-                      }
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
                 >
@@ -43,22 +49,20 @@ const Navbar: React.FC = () => {
                 </a>
               );
             }
-            // Special handling for 'A propos' to scroll to about section
+
             if (item.name === "A propos") {
               return (
                 <a
                   key={item.name}
                   href="#about-section"
-                  className={`text-white transition-colors ${
+                  className={`text-white transition ${
                     isActive ? "font-semibold" : "font-normal opacity-100"
                   } hover:opacity-70`}
                   onClick={(e) => {
                     if (pathname === "/") {
                       e.preventDefault();
                       const el = document.getElementById("about-section");
-                      if (el) {
-                        el.scrollIntoView({ behavior: "smooth" });
-                      }
+                      if (el) el.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
                 >
@@ -66,15 +70,14 @@ const Navbar: React.FC = () => {
                 </a>
               );
             }
+
             return (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`
-          text-white transition-colors
-          ${isActive ? "font-semibold" : "font-normal opacity-100"}
-          hover:opacity-70
-        `}
+                className={`text-white transition ${
+                  isActive ? "font-semibold" : "font-normal opacity-100"
+                } hover:opacity-70`}
               >
                 {item.name}
               </Link>
@@ -83,7 +86,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Auth links (desktop) */}
-        <div className="hidden md:flex items-center space-x-2 md:space-x-4 min-w-0">
+        <div className="hidden md:flex items-center space-x-4">
           <Link
             to="/register"
             className="text-white font-normal hover:underline transition"
@@ -137,19 +140,18 @@ const Navbar: React.FC = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden mt-2 bg-primary rounded-lg py-4 space-y-2 px-4">
+        <div className="md:hidden mt-2 bg-primary rounded-xl py-4 px-4 space-y-3 text-sm">
           {menuItems.map((item) => {
             const isActive = pathname === item.path;
             return (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`
-        block transition-colors
-        ${isActive ? "font-semibold text-white" : "font-normal text-white/70"}
-        py-1
-        hover:text-white
-      `}
+                className={`block transition ${
+                  isActive
+                    ? "font-semibold text-white"
+                    : "font-normal text-white/70"
+                } hover:text-white`}
                 onClick={() => setOpen(false)}
               >
                 {item.name}
@@ -158,7 +160,7 @@ const Navbar: React.FC = () => {
           })}
           <Link
             to="/register"
-            className="block text-white font-medium py-1 hover:underline"
+            className="block text-white font-medium hover:underline"
             onClick={() => setOpen(false)}
           >
             S’inscrire
