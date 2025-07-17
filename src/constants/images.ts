@@ -35,6 +35,10 @@ export const icons = {
   linkedinWhite: require("../assets/icons/linkedin_white.png"),
   twitter: require("../assets/icons/twitter.png"),
   twitterWhite: require("../assets/icons/twitter_white.png"),
+  iconUser: require("../assets/icons/icon_user.png"),
+  iconMenu: require("../assets/icons/icon_menu.png"),
+  iconClose: require("../assets/icons/icon_close.png"),
+  logoMobile: require("../assets/icons/logo_mobile.png"),
 };
 
 export const logos = {

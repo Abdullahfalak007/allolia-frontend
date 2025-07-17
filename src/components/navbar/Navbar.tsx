@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { logos } from "../../constants/images";
+import { logos, icons } from "../../constants/images";
 import { menuItems } from "../../constants/menuItems";
 
 const Navbar: React.FC = () => {
@@ -18,25 +18,33 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed top-4 left-0 right-0 z-50 px-2 sm:px-4 md:px-8 lg:mx-20">
-      <div className="max-w-7xl mx-auto bg-secondary rounded-full flex items-center justify-between px-3 sm:px-6 md:px-8 py-3 md:py-4 overflow-x-auto">
+      <div className="max-w-7xl mx-auto bg-transparent md:bg-secondary rounded-full flex items-center justify-between px-3 sm:px-6 md:px-8 md:mx-20 lg:mx-2 py-3 lg:py-5 md:py-4 overflow-x-auto">
         {/* Logo */}
-        <Link to="/" className="flex-shrink-0">
+        <Link
+          to="/"
+          className="hidden md:block flex-shrink-0"
+          style={{ cursor: "pointer" }}
+        >
           <img src={logos.logo_white} alt="Allolia" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6 min-w-0">
+        <div className="hidden md:flex items-center min-w-0 pl-16 md:pl-4 lg:pl-16 space-x-6 justify-start flex-1">
           {menuItems.map((item) => {
             const isActive = pathname === item.path;
+            const baseClass =
+              "transition font-poppins" +
+              (isActive
+                ? " font-bold text-[20px] text-white"
+                : " font-normal text-[14px] text-white opacity-100");
+            const hoverClass = "hover:opacity-70";
 
             if (item.name === "Nos offres") {
               return (
                 <a
                   key={item.name}
                   href="#offers-section"
-                  className={`text-white transition ${
-                    isActive ? "font-semibold" : "font-normal opacity-100"
-                  } hover:opacity-70`}
+                  className={`${baseClass} ${hoverClass}`}
                   onClick={(e) => {
                     if (pathname === "/") {
                       e.preventDefault();
@@ -55,9 +63,7 @@ const Navbar: React.FC = () => {
                 <a
                   key={item.name}
                   href="#about-section"
-                  className={`text-white transition ${
-                    isActive ? "font-semibold" : "font-normal opacity-100"
-                  } hover:opacity-70`}
+                  className={`${baseClass} ${hoverClass}`}
                   onClick={(e) => {
                     if (pathname === "/") {
                       e.preventDefault();
@@ -75,9 +81,8 @@ const Navbar: React.FC = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-white transition ${
-                  isActive ? "font-semibold" : "font-normal opacity-100"
-                } hover:opacity-70`}
+                className={`${baseClass} ${hoverClass}`}
+                style={{ marginLeft: 0 }}
               >
                 {item.name}
               </Link>
@@ -89,91 +94,74 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center space-x-4">
           <Link
             to="/register"
-            className="text-white font-normal hover:underline transition"
+            className="bg-secondary text-white hover:bg-white hover:text-secondary rounded-full px-4 py-1 transition hover:bg-secondary hover:text-white"
+            style={{ fontFamily: "Poppins", fontSize: 14, fontWeight: 200 }}
           >
             S’inscrire
           </Link>
           <Link
             to="/login"
-            className="bg-white text-primary font-normal rounded-full px-4 py-1 hover:bg-secondary hover:text-white transition"
+            className="bg-white text-black rounded-full px-4 py-1 hover:bg-secondary hover:text-white transition"
+            style={{ fontFamily: "Poppins", fontSize: 14, fontWeight: 200 }}
           >
             Se connecter
           </Link>
         </div>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden p-2 text-white hover:bg-secondary/80 rounded-full"
-        >
-          {open ? (
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
-        </button>
-      </div>
+        <div className="flex md:hidden items-center justify-between w-full px-3">
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="p-2 text-white rounded-full"
+          >
+            {open ? (
+              <img src={icons.iconClose} alt="Close menu" className="h-6 w-6" />
+            ) : (
+              <img src={icons.iconMenu} alt="Open menu" className="h-6 w-6" />
+            )}
+          </button>
 
-      {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden mt-2 bg-secondary rounded-xl py-4 px-4 space-y-3 text-sm">
-          {menuItems.map((item) => {
-            const isActive = pathname === item.path;
-            return (
+          <img src={icons.logoMobile} alt="Allolia" className="h-8 w-auto" />
+
+          <Link to="/profile">
+            <img src={icons.iconUser} alt="Profile" className="h-6 w-auto" />
+          </Link>
+        </div>
+
+        {/* mobile menu */}
+        {open && (
+          <div className="md:hidden absolute inset-x-0 top-full mt-2 mx-4 bg-white rounded-xl py-4 px-4 space-y-3 text-sm">
+            {menuItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 className={`block transition ${
-                  isActive
-                    ? "font-semibold text-white"
-                    : "font-normal text-white/70"
-                } hover:text-white`}
+                  pathname === item.path
+                    ? "font-semibold text-primary"
+                    : "font-normal text-secondary"
+                } hover:text-primary`}
                 onClick={() => setOpen(false)}
               >
                 {item.name}
               </Link>
-            );
-          })}
-          <Link
-            to="/register"
-            className="block text-white font-medium hover:underline"
-            onClick={() => setOpen(false)}
-          >
-            S’inscrire
-          </Link>
-          <Link
-            to="/login"
-            className="block bg-white text-primary font-medium rounded-full text-center py-2 hover:bg-secondary hover:text-white transition"
-            onClick={() => setOpen(false)}
-          >
-            Se connecter
-          </Link>
-        </div>
-      )}
+            ))}
+            <Link
+              to="/register"
+              className="block text-secondary hover:bg-secondary hover:text-white font-medium rounded-full py-2 text-center transition"
+              onClick={() => setOpen(false)}
+            >
+              S’inscrire
+            </Link>
+            <Link
+              to="/login"
+              className="block hover:bg-primary bg-secondary text-black font-medium rounded-full text-center py-2 hover:text-white transition"
+              onClick={() => setOpen(false)}
+            >
+              Se connecter
+            </Link>
+          </div>
+        )}
+      </div>
     </nav>
   );
 };
