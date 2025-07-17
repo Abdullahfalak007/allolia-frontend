@@ -3,7 +3,7 @@ import React from "react";
 import { logos, icons } from "../../constants/images";
 
 const Footer: React.FC = () => (
-  <footer className="bg-primary text-white">
+  <footer className="bg-secondary text-white">
     {/* Top grid */}
     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-32 pt-16 pb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {/* 1) Logo & tagline */}

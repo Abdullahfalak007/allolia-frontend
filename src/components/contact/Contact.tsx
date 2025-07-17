@@ -48,7 +48,7 @@ const ContactSection: React.FC = () => {
         </div>
 
         {/* RIGHT: content */}
-        <div className="w-full md:w-7/12 flex flex-col items-center md:items-start text-center md:text-left justify-center mt-8 md:mt-0 ml-32">
+        <div className="w-full md:w-7/12 flex flex-col items-center md:items-start text-center md:text-left justify-center md:mt-0 ml-32">
           {/* Title */}
           <h2 className="text-6xl font-normal mb-8 max-w-12">
             Nous contacter !
