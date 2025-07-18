@@ -16,13 +16,11 @@ const Hero: React.FC = () => {
           <h1 className="text-white text-3xl sm:text-4xl lg:text-4xl font-bold ">
             Service client spécialisé en location courte durée
           </h1>
-
           {/* Subtitle (always visible) */}
           <p className="text-white/80 max-w-md mx-auto md:mx-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
-
           {/* Metrics */}
           <div className="mt-4 flex justify-center md:justify-start space-x-8 text-white">
             <div className="text-left">
@@ -42,9 +40,8 @@ const Hero: React.FC = () => {
               </span>
             </div>
           </div>
-
-          {/* CTA buttons */}
-          <div className="mt-6 flex justify-center md:justify-start space-x-4 flex-wrap">
+          {/* CTA buttons */}+{" "}
+          <div className="mt-6 flex justify-center md:justify-start gap-4 flex-wrap">
             {/* Blue button */}
             <button className="inline-flex items-center justify-center bg-secondary text-white px-6 py-3 rounded-full text-sm font-normal hover:opacity-90 transition">
               NOS OFFRES&nbsp;
