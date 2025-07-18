@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
             <img
               src={images.hero_shape}
               alt="Hero Shape"
-              className="absolute top-0 left-0 w-full h-full object-cover"
+              className="absolute top-0 left-0 w-full h-full object-contain"
               style={{ opacity: 0, zIndex: 1 }}
             />
             {/* Frosted glass overlay, masked to hero shape */}
@@ -86,8 +86,8 @@ const Hero: React.FC = () => {
                 maskImage: `url(${images.hero_shape})`,
                 WebkitMaskRepeat: "no-repeat",
                 maskRepeat: "no-repeat",
-                WebkitMaskSize: "cover",
-                maskSize: "cover",
+                WebkitMaskSize: "contain",
+                maskSize: "contain",
                 background: "rgba(255,255,255,0.3)",
                 backdropFilter: "blur(10px)",
                 WebkitBackdropFilter: "blur(10px)",
