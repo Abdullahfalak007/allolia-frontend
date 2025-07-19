@@ -44,7 +44,7 @@ const OffersSection: React.FC = () => {
         </div>
 
         {/* Cards */}
-        <div className="flex flex-wrap justify-center gap-8 items-end lg:-mt-16">
+        <div className="flex flex-wrap justify-around gap-8 items-end lg:-mt-16">
           {/* Pack Basic */}
           <div className="relative w-full sm:w-60 max-w-[240px] mx-auto sm:mx-0">
             <img
@@ -63,7 +63,7 @@ const OffersSection: React.FC = () => {
 
             {/* Badges */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              <span className="absolute top-2 right-6 sm:top-20 sm:right-20 bg-white/80 text-secondary text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+              <span className="absolute top-2 right-6  bg-white/80 text-secondary text-xs px-2 py-1 rounded-full backdrop-blur-sm">
                 Accès illimités
               </span>
               <span className="absolute top-2 -right-8 bg-secondary text-white text-xs px-2 py-1 rounded-full">
