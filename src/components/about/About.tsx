@@ -19,14 +19,14 @@ const AboutSection: React.FC = () => {
         <div className="mt-2 lg:flex lg:justify-between lg:items-start">
           {/* Left side: title + small badges */}
           <div className="lg:w-1/2 text-white">
-            <h2 className="sm:text-4xl lg:text-7xl font-normal">
+            <h2 className="sm:text-4xl lg:text-4xl font-normal">
               Votre plateforme de gestion.
               <br />
               Service client 7/7
             </h2>
           </div>
 
-          {/* Right side: 2 metrics */}
+          {/* Right side: 3 metrics */}
           <div className="mt-6 lg:mt-0 lg:w-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-white text-center">
             <div>
               <span className="block text-2xl font-semibold">
@@ -81,8 +81,8 @@ const AboutSection: React.FC = () => {
         </div>
 
         {/* Glass‑morphism stats card (desktop only; mobile you can stack below) */}
-        <div className="mt-24 lg:absolute lg:top-1/2 lg:right-8 lg:transform lg:-translate-y-1/2 hidden lg:block">
-          <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-16 w-full max-w-xl shadow-lg">
+        <div className="mt-32 lg:absolute lg:top-1/2 lg:right-32 lg:transform lg:-translate-y-1/2 hidden lg:block">
+          <div className="bg-white/20 backdrop-blur-lg rounded-2xl p-16 lg:p-8 lg:w-[25rem] max-w-xl shadow-lg">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
               <div>
                 <h3 className="text-3xl font-normal text-white">52K+</h3>
@@ -93,7 +93,7 @@ const AboutSection: React.FC = () => {
               {/* Right column */}
               <div className="flex flex-col items-start">
                 <span className="bg-secondary text-black text-xs px-3 py-1 rounded-lg">
-                  Helping
+                  Helping Businesses
                 </span>
                 <p className="mt-4 text-white/90 font-normal text-sm leading-relaxed">
                   From innovative marketing strategies to operational
@@ -118,7 +118,7 @@ const AboutSection: React.FC = () => {
               {/* Right column */}
               <div className="flex flex-col items-start lg:items-end">
                 <span className="bg-secondary text-white text-xs px-3 py-1 rounded-full">
-                  Helping
+                  Helping Businesses
                 </span>
                 <p className="mt-4 text-white/90 text-sm leading-relaxed">
                   From innovative marketing strategies to operational
