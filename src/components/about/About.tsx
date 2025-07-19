@@ -13,15 +13,13 @@ const AboutSection: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-4 md:px-32 py-20 md:py-32">
         {/* Top label */}
-        <span className="text-white text-sm uppercase tracking-wide">
-          À propos
-        </span>
+        <span className="text-white text-3xl font-normal">À propos</span>
 
         {/* Headline + badges + metrics */}
         <div className="mt-2 lg:flex lg:justify-between lg:items-start">
           {/* Left side: title + small badges */}
           <div className="lg:w-1/2 text-white">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight">
+            <h2 className="sm:text-4xl lg:text-7xl font-normal">
               Votre plateforme de gestion.
               <br />
               Service client 7/7
@@ -29,7 +27,13 @@ const AboutSection: React.FC = () => {
           </div>
 
           {/* Right side: 2 metrics */}
-          <div className="mt-6 lg:mt-0 lg:w-auto flex flex-wrap gap-8 text-white text-center">
+          <div className="mt-6 lg:mt-0 lg:w-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-white text-center">
+            <div>
+              <span className="block text-2xl font-semibold">
+                Système automatisé
+              </span>
+              <span className="block text-xs mt-1">Expertises terrain</span>
+            </div>
             <div>
               <span className="block text-2xl font-semibold">7/7</span>
               <span className="block text-xs mt-1">
