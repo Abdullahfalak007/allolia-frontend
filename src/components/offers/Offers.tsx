@@ -1,4 +1,3 @@
-// src/components/offers/OffersSection.tsx
 import React from "react";
 import { images, icons } from "../../constants/images";
 import packBasicBg from "../../assets/images/pack_basic_bg.svg";
@@ -36,18 +35,18 @@ const OffersSection: React.FC = () => {
 
           <div className="hidden md:flex space-x-4">
             <button className="inline-flex items-center bg-secondary text-white px-5 py-2 rounded-full text-sm font-medium hover:opacity-90 transition">
-              CONTACTER&nbsp;&rarr;
+              CONTACTER →
             </button>
             <button className="inline-flex items-center bg-black text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-black/90 transition">
-              VOIR PLUS&nbsp;&rarr;
+              VOIR PLUS →
             </button>
           </div>
         </div>
 
         {/* Cards */}
-        <div className="flex flex-wrap justify-between gap-8 items-end -mt-16">
+        <div className="flex flex-wrap justify-center gap-8 items-end lg:-mt-16">
           {/* Pack Basic */}
-          <div className="relative w-full sm:w-60">
+          <div className="relative w-full sm:w-60 max-w-[240px] mx-auto sm:mx-0">
             <img
               src={packBasicBg}
               className="w-full"
@@ -64,8 +63,7 @@ const OffersSection: React.FC = () => {
 
             {/* Badges */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-              {" "}
-              <span className="absolute top-2 right-6 bg-white/80 text-secondary text-xs px-2 py-1 rounded-full backdrop-blur-sm">
+              <span className="absolute top-2 right-6 sm:top-20 sm:right-20 bg-white/80 text-secondary text-xs px-2 py-1 rounded-full backdrop-blur-sm">
                 Accès illimités
               </span>
               <span className="absolute top-2 -right-8 bg-secondary text-white text-xs px-2 py-1 rounded-full">
@@ -86,7 +84,7 @@ const OffersSection: React.FC = () => {
                 19<span className="text-lg">€99</span>
               </p>
               <button className="w-full inline-flex items-center justify-center bg-secondary text-white rounded-full py-1 px-3 font-normal hover:opacity-90 transition">
-                J’EN PROFITE&nbsp;<span className="text-lg">→</span>
+                J’EN PROFITE <span className="text-lg">→</span>
               </button>
               <span className="block text-center text-secondary text-xs mt-2">
                 Sans engagement
@@ -95,7 +93,7 @@ const OffersSection: React.FC = () => {
           </div>
 
           {/* Pack Premium */}
-          <div className="relative w-full sm:w-60">
+          <div className="relative w-full sm:w-60 max-w-[240px] mx-auto sm:mx-0">
             <img
               src={packPremiumBg}
               className="w-full"
@@ -135,7 +133,7 @@ const OffersSection: React.FC = () => {
                 39<span className="align-super text-lg">€99</span>
               </p>
               <button className="mt-2 w-full inline-flex items-center justify-center bg-white text-secondary rounded-full py-1 px-3 mt-2 font-normal hover:bg-white/90 transition">
-                J’EN PROFITE&nbsp;<span className="text-lg">→</span>
+                J’EN PROFITE <span className="text-lg">→</span>
               </button>
               <span className="block text-center text-white/80 text-xs mt-2">
                 Sans engagement
@@ -144,7 +142,7 @@ const OffersSection: React.FC = () => {
           </div>
 
           {/* Service client */}
-          <div className="relative w-full sm:w-60">
+          <div className="relative w-full sm:w-60 max-w-[240px] mx-auto sm:mx-0">
             <div
               className="relative rounded-3xl overflow-hidden shadow-lg flex flex-col md:min-h-[400px] bg-cover bg-center"
               style={{ backgroundImage: `url(${serviceClient})` }}
