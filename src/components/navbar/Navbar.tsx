@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed top-4 left-0 right-0 z-50 px-2 sm:px-4 md:px-8 lg:mx-20">
-      <div className="max-w-7xl mx-auto bg-transparent md:bg-secondary rounded-full flex items-center justify-between px-3 sm:px-6 md:px-8 md:mx-20 lg:mx-2 py-3 lg:py-5 md:py-4 overflow-x-auto">
+      <div className="max-w-7xl mx-auto bg-transparent md:bg-secondary rounded-full flex items-center justify-between px-3 mx-auto max-w-full py-3 lg:py-5 md:py-4 overflow-x-auto">
         {/* Logo */}
         <Link
           to="/"
