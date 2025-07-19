@@ -85,7 +85,7 @@ const OffersSection: React.FC = () => {
             <button className="mt-6 w-full inline-flex items-center justify-center bg-secondary text-white rounded-full py-3 px-6 text-base font-normal hover:opacity-90 transition">
               J’EN PROFITE&nbsp;<span className="text-lg">→</span>
             </button>
-            <span className="block text-center text-white/80 text-xs mt-2">
+            <span className="block text-center text-secondary text-xs mt-2">
               Sans engagement
             </span>
           </div>

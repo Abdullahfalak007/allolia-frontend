@@ -14,7 +14,7 @@ const partnerLogos = [
 const PartnersSection: React.FC = () => (
   <section id="partners-section" className="py-12">
     <div className="max-w-7xl mx-auto px-4">
-      <h2 className="text-center text-2xl font-semibold mb-16">
+      <h2 className="text-center text-4xl font-normal mb-16">
         Nos partenaires
       </h2>
 
