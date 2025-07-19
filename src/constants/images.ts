@@ -3,8 +3,8 @@
 export const images = {
   heroBg: require("../assets/images/hero_bg.jpg"),
   illustration: require("../assets/images/illustration.png"),
-  packBasicBg: require("../assets/images/pack_basic_bg.png"),
-  packPremiumBg: require("../assets/images/pack_premium_bg.png"),
+  packBasicBg: require("../assets/images/pack_basic_bg.svg"),
+  packPremiumBg: require("../assets/images/pack_premium_bg.svg"),
   serviceClient: require("../assets/images/service_client.jpg"),
   hero_shape: require("../assets/images/hero_shape.png"),
   partner1: require("../assets/partners/partner1.png"),
