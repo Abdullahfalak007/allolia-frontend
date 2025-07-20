@@ -117,16 +117,20 @@ const Navbar: React.FC = () => {
             className="p-2 text-white rounded-full"
           >
             {open ? (
-              <img src={icons.iconClose} alt="Close menu" className="h-6 w-6" />
+              <img
+                src={icons.iconClose}
+                alt="Close menu"
+                className="h-10 w-10"
+              />
             ) : (
-              <img src={icons.iconMenu} alt="Open menu" className="h-6 w-6" />
+              <img src={icons.iconMenu} alt="Open menu" className="h-10 w-10" />
             )}
           </button>
 
-          <img src={icons.logoMobile} alt="Allolia" className="h-8 w-auto" />
+          <img src={icons.logoMobile} alt="Allolia" className="h-16 w-16" />
 
           <Link to="/profile">
-            <img src={icons.iconUser} alt="Profile" className="h-6 w-auto" />
+            <img src={icons.iconUser} alt="Profile" className="h-10 w-10" />
           </Link>
         </div>
 
