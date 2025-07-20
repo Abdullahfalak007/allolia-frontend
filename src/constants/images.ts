@@ -39,6 +39,8 @@ export const icons = {
   iconMenu: require("../assets/icons/icon_menu.png"),
   iconClose: require("../assets/icons/icon_close.png"),
   logoMobile: require("../assets/icons/logo_mobile.png"),
+  iconMail: require("../assets/icons/icon_mail.png"),
+  iconPhone: require("../assets/icons/icon_phone.png"),
 };
 
 export const logos = {

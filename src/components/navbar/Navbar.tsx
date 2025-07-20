@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
           </Link>
           <Link
             to="/login"
-            className="bg-white text-black rounded-full px-8 py-3 hover:bg-secondary hover:text-white transition"
+            className="bg-white text-black rounded-full px-8 py-3 hover:bg-primary hover:text-white transition"
             style={{ fontFamily: "Poppins", fontSize: 14, fontWeight: 200 }}
           >
             Se connecter
@@ -136,35 +136,94 @@ const Navbar: React.FC = () => {
 
         {/* mobile menu */}
         {open && (
-          <div className="lg:hidden absolute inset-x-0 top-full mt-2 mx-4 bg-white rounded-xl py-4 px-4 space-y-3 text-sm">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`block transition ${
-                  pathname === item.path
-                    ? "font-semibold text-primary"
-                    : "font-normal text-secondary"
-                } hover:text-primary`}
-                onClick={() => setOpen(false)}
-              >
-                {item.name}
+          <div className="fixed inset-0 z-50 bg-secondary text-white flex flex-col p-6">
+            {/* Top bar: Close button – Logo – Profile icon */}
+            <div className="flex items-center justify-between mb-8">
+              <button onClick={() => setOpen(false)} className="p-2">
+                <img
+                  src={icons.iconClose}
+                  alt="Close menu"
+                  className="h-6 w-6"
+                />
+              </button>
+              <img src={logos.logo_white} alt="Logo" className="h-10 w-auto" />
+              <Link to="/profile" onClick={() => setOpen(false)}>
+                <img src={icons.iconUser} alt="Profile" className="h-6 w-6" />
               </Link>
-            ))}
-            <Link
-              to="/register"
-              className="block text-secondary hover:bg-secondary hover:text-white font-medium rounded-full py-2 text-center transition"
-              onClick={() => setOpen(false)}
-            >
-              S’inscrire
-            </Link>
-            <Link
-              to="/login"
-              className="block hover:bg-primary bg-secondary text-black font-medium rounded-full text-center py-2 hover:text-white transition"
-              onClick={() => setOpen(false)}
-            >
-              Se connecter
-            </Link>
+            </div>
+
+            {/* Menu links */}
+            <nav className="space-y-6">
+              {menuItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={() => setOpen(false)}
+                  className="block text-sm font-regular text-white transition"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+
+            {/* Newsletter signup */}
+            <div className="mt-auto">
+              <h3 className="text-md mb-2">News letter</h3>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  // handle submission
+                }}
+                className="relative mb-4"
+              >
+                <input
+                  type="email"
+                  placeholder="Adresse e‑mail"
+                  className="w-full px-3 py-2 mb-3 bg-secondary placeholder-white text-white focus:outline-none focus:ring-1 focus:ring-white"
+                  required
+                />
+                <button type="submit" className="absolute right-8">
+                  <img
+                    src={icons.iconMail}
+                    alt="arrow"
+                    className="w-8 h-5 mt-3"
+                  />
+                </button>
+              </form>
+              <hr className="border-white/50 -mt-3" />
+            </div>
+
+            {/* Social icons */}
+            <div className="mt-6 flex space-x-6">
+              <a href="#">
+                <img
+                  src={icons.facebookWhite}
+                  alt="Facebook"
+                  className="h-6 w-6 p-1 border border-white rounded-full"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src={icons.linkedinWhite}
+                  alt="LinkedIn"
+                  className="h-6 w-6 p-1 border border-white rounded-full"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src={icons.twitterWhite}
+                  alt="Twitter"
+                  className="h-6 w-6 p-1 border border-white rounded-full"
+                />
+              </a>
+              <a href="tel:">
+                <img
+                  src={icons.iconPhone}
+                  alt="Call"
+                  className="h-6 w-6 bg-white p-1 rounded-full"
+                />
+              </a>
+            </div>
           </div>
         )}
       </div>
