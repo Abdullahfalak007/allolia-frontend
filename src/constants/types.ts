@@ -9,6 +9,12 @@ export interface AuthResponse {
   token: string;
 }
 
+export type AuthContextType = {
+  isAuthenticated: boolean;
+  login: (email: string, password: string) => Promise<void>;
+  logout: () => Promise<void>;
+};
+
 export type InputFieldProps = {
   type: string;
   id: string;

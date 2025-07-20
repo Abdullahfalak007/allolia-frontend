@@ -9,20 +9,20 @@ const Hero: React.FC = () => {
       style={{ backgroundImage: `url(${images.heroBg})` }}
     >
       <div className="absolute inset-0 bg-black/40"></div>
-      <div className="relative z-10 mx-auto px-2 sm:px-4 md:px-32 py-20 md:py-32 flex flex-col md:flex-row items-center max-w-7xl">
+      <div className="relative z-10 mx-auto px-2 sm:px-4 lg:px-32 py-20 md:py-32 flex flex-col lg:flex-row items-center max-w-7xl">
         {/* Left column */}
-        <div className="md:w-1/2 text-center md:text-left space-y-12 mt-12">
+        <div className="lg:w-1/2 text-center lg:text-left space-y-12 mt-12">
           {/* Title */}
           <h1 className="text-white text-3xl sm:text-4xl lg:text-4xl font-bold ">
             Service client spécialisé en location courte durée
           </h1>
           {/* Subtitle (always visible) */}
-          <p className="text-white/80 max-w-md mx-auto md:mx-0">
+          <p className="text-white/80 max-w-lg mx-auto lg:mx-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
           {/* Metrics */}
-          <div className="mt-4 flex justify-center md:justify-start space-x-8 text-white">
+          <div className="mt-4 flex justify-center lg:justify-start space-x-8 text-white">
             <div className="text-left">
               <span className="block text-2xl font-semibold">+2300</span>
               <span className="block text-sm uppercase">Logements en LCD</span>
@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
           {/* CTA buttons */}+{" "}
-          <div className="mt-6 flex justify-center md:justify-start gap-4 flex-wrap">
+          <div className="mt-6 flex justify-center lg:justify-start gap-4 flex-wrap">
             {/* Blue button */}
             <button className="inline-flex items-center justify-center bg-secondary text-white px-6 py-3 rounded-full text-sm font-normal hover:opacity-90 transition">
               NOS OFFRES&nbsp;
@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Right card with hero shape image, frosted glass effect, and overlayed content */}
-        <div className="hidden lg:block md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end">
+        <div className="hidden lg:block lg:w-1/2 mt-12 lg:mt-0 flex justify-center lg:justify-end">
           <div className="relative mt-48 max-w-sm w-full">
             {/* Hero shape image as background, semi-transparent */}
             <img

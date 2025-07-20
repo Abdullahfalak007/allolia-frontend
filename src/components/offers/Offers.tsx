@@ -144,7 +144,7 @@ const OffersSection: React.FC = () => {
           {/* Service client */}
           <div className="relative w-full sm:w-60 max-w-[240px] mx-auto sm:mx-0">
             <div
-              className="relative rounded-3xl overflow-hidden shadow-lg flex flex-col md:min-h-[400px] bg-cover bg-center"
+              className="relative rounded-3xl overflow-hidden shadow-lg flex flex-col min-h-[350px] bg-cover bg-center"
               style={{ backgroundImage: `url(${serviceClient})` }}
             >
               <div className="absolute inset-0 bg-black/60" />

@@ -17,19 +17,19 @@ const Navbar: React.FC = () => {
   }, [open]);
 
   return (
-    <nav className="fixed top-4 left-0 right-0 z-50 px-2 sm:px-4 md:px-8 lg:mx-20">
-      <div className="max-w-7xl mx-auto bg-transparent md:bg-secondary rounded-full flex items-center justify-between px-3 mx-auto max-w-full py-3 lg:py-5 md:py-4 overflow-x-auto">
+    <nav className="fixed top-4 left-0 right-0 z-50 px-2 sm:px-4 md:px-28 lg:mx-16">
+      <div className="max-w-7xl mx-auto bg-transparent lg:bg-secondary rounded-full flex items-center justify-between px-3 mx-auto max-w-full py-8 lg:py-3 lg:py-3 overflow-x-auto">
         {/* Logo */}
         <Link
           to="/"
-          className="hidden md:block flex-shrink-0"
+          className="hidden lg:block flex-shrink-0"
           style={{ cursor: "pointer" }}
         >
-          <img src={logos.logo_white} alt="Allolia" className="h-8 w-auto" />
+          <img src={logos.logo_white} alt="Allolia" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center min-w-0 pl-16 md:pl-4 lg:pl-16 space-x-6 justify-start flex-1">
+        <div className="hidden lg:flex items-center min-w-0 pl-16 md:pl-4 lg:pl-16 space-x-6 justify-start flex-1">
           {menuItems.map((item) => {
             const isActive = pathname === item.path;
             const baseClass =
@@ -52,6 +52,7 @@ const Navbar: React.FC = () => {
                       if (el) el.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
+                  style={{ fontFamily: "Poppins" }}
                 >
                   {item.name}
                 </a>
@@ -71,6 +72,7 @@ const Navbar: React.FC = () => {
                       if (el) el.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
+                  style={{ fontFamily: "Poppins" }}
                 >
                   {item.name}
                 </a>
@@ -82,7 +84,7 @@ const Navbar: React.FC = () => {
                 key={item.name}
                 to={item.path}
                 className={`${baseClass} ${hoverClass}`}
-                style={{ marginLeft: 0 }}
+                style={{ marginLeft: 0, fontFamily: "Poppins" }}
               >
                 {item.name}
               </Link>
@@ -91,17 +93,17 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Auth links (desktop) */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4">
           <Link
             to="/register"
-            className="bg-secondary text-white hover:text-secondary hover:bg-white rounded-full px-4 py-1 transition"
+            className="bg-secondary text-white hover:text-secondary hover:bg-white rounded-full px-8 py-3 transition"
             style={{ fontFamily: "Poppins", fontSize: 14, fontWeight: 200 }}
           >
             S’inscrire
           </Link>
           <Link
             to="/login"
-            className="bg-white text-black rounded-full px-4 py-1 hover:bg-secondary hover:text-white transition"
+            className="bg-white text-black rounded-full px-8 py-3 hover:bg-secondary hover:text-white transition"
             style={{ fontFamily: "Poppins", fontSize: 14, fontWeight: 200 }}
           >
             Se connecter
@@ -109,7 +111,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile toggle */}
-        <div className="flex md:hidden items-center justify-between w-full px-3">
+        <div className="flex lg:hidden items-center justify-between w-full px-3">
           <button
             onClick={() => setOpen((v) => !v)}
             className="p-2 text-white rounded-full"
@@ -130,7 +132,7 @@ const Navbar: React.FC = () => {
 
         {/* mobile menu */}
         {open && (
-          <div className="md:hidden absolute inset-x-0 top-full mt-2 mx-4 bg-white rounded-xl py-4 px-4 space-y-3 text-sm">
+          <div className="lg:hidden absolute inset-x-0 top-full mt-2 mx-4 bg-white rounded-xl py-4 px-4 space-y-3 text-sm">
             {menuItems.map((item) => (
               <Link
                 key={item.name}
