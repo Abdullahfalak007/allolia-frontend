@@ -44,9 +44,9 @@ const OffersSection: React.FC = () => {
         </div>
 
         {/* Cards */}
-        <div className="flex flex-wrap justify-around gap-8 items-end lg:-mt-16">
+        <div className="flex flex-col lg:flex-row justify-around gap-8 items-end lg:-mt-16">
           {/* Pack Basic */}
-          <div className="relative w-full sm:w-60 max-w-[240px] mx-auto sm:mx-0">
+          <div className="relative w-full lg:w-1/3 max-w-[340px] mx-auto lg:mx-0">
             <img
               src={packBasicBg}
               className="w-full"
@@ -93,7 +93,7 @@ const OffersSection: React.FC = () => {
           </div>
 
           {/* Pack Premium */}
-          <div className="relative w-full sm:w-60 max-w-[240px] mx-auto sm:mx-0">
+          <div className="relative w-full lg:w-1/3 max-w-[340px] mx-auto lg:mx-0 ">
             <img
               src={packPremiumBg}
               className="w-full"
@@ -142,9 +142,9 @@ const OffersSection: React.FC = () => {
           </div>
 
           {/* Service client */}
-          <div className="relative w-full sm:w-60 max-w-[240px] mx-auto sm:mx-0">
+          <div className="relative w-full lg:w-1/3 max-w-[340px] mx-auto lg:mx-0">
             <div
-              className="relative rounded-3xl overflow-hidden shadow-lg flex flex-col min-h-[350px] bg-cover bg-center"
+              className="relative rounded-3xl overflow-hidden shadow-lg flex flex-col min-h-[500px] bg-cover bg-center"
               style={{ backgroundImage: `url(${serviceClient})` }}
             >
               <div className="absolute inset-0 bg-black/60" />
