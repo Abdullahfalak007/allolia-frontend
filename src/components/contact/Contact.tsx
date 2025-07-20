@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const ContactSection: React.FC = () => (
   <section
     id="contact-section"
-    className="max-w-7xl mx-auto px-2 sm:px-4 md:px-32 py-12 sm:py-16 bg-gray-50"
+    className="max-w-7xl mx-auto px-2 sm:px-4 md:px-32 py-12 sm:py-16"
   >
     <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:space-x-8 items-center">
       {/* LEFT: image card */}

@@ -9,7 +9,7 @@ const AboutSection: React.FC = () => {
       style={{ backgroundImage: `url(${images.aboutSectionBackground})` }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-4 md:px-32 py-20 md:py-32">
         {/* Top label */}

@@ -16,7 +16,7 @@ const Testimonials: React.FC = () => {
   return (
     <section
       id="testimonials-section"
-      className="px-2 sm:px-4 md:px-32 py-20 md:py-32 bg-gray-50"
+      className="max-w-7xl mx-auto px-2 sm:px-4 md:px-32 py-20 md:py-32"
     >
       {/* Bullet above the title */}
       <div className="flex justify-center mb-4">
