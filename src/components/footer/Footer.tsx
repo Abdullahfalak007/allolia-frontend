@@ -1,6 +1,6 @@
 // src/components/footer/Footer.tsx
 import React from "react";
-import { logos, icons } from "../../constants/images";
+import { logos, icons, images } from "../../constants/images";
 
 const Footer: React.FC = () => (
   <footer className="bg-secondary text-white">
@@ -76,7 +76,26 @@ const Footer: React.FC = () => (
         </p>
 
         <h3 className="font-semibold mb-2">News letter</h3>
-        <div className="text-sm mb-2">Adresse e‑mail</div>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            // handle submission
+          }}
+        >
+          <input
+            type="email"
+            placeholder="Adresse e‑mail"
+            className="w-full px-3 py-2 mb-3 bg-secondary placeholder-white text-white focus:outline-none focus:ring-1 focus:ring-white"
+            required
+          />
+          <button type="submit" className="absolute">
+            <img
+              src={icons.arrow_icon_to_right_white}
+              alt="arrow"
+              className="w-5 h-5 mt-3"
+            />
+          </button>
+        </form>
         <hr className="border-white/50" />
       </div>
     </div>
