@@ -32,10 +32,16 @@ export const loginUser = createAsyncThunk(
         { withCredentials: true }
       );
       return response.data;
-    } catch (error: any) {
-      return rejectWithValue(
-        error.response?.data?.message || error.message || "An error occurred"
-      );
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(
+          error.response?.data?.message || error.message || "An error occurred"
+        );
+      } else if (error instanceof Error) {
+        return rejectWithValue(error.message);
+      } else {
+        return rejectWithValue("An error occurred");
+      }
     }
   }
 );
@@ -54,10 +60,16 @@ export const registerUser = createAsyncThunk(
         { withCredentials: true }
       );
       return response.data;
-    } catch (error: any) {
-      return rejectWithValue(
-        error.response?.data?.message || error.message || "An error occurred"
-      );
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(
+          error.response?.data?.message || error.message || "An error occurred"
+        );
+      } else if (error instanceof Error) {
+        return rejectWithValue(error.message);
+      } else {
+        return rejectWithValue("An error occurred");
+      }
     }
   }
 );
@@ -71,10 +83,16 @@ export const forgotPassword = createAsyncThunk(
         email,
       });
       return response.data;
-    } catch (error: any) {
-      return rejectWithValue(
-        error.response?.data?.message || error.message || "An error occurred"
-      );
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(
+          error.response?.data?.message || error.message || "An error occurred"
+        );
+      } else if (error instanceof Error) {
+        return rejectWithValue(error.message);
+      } else {
+        return rejectWithValue("An error occurred");
+      }
     }
   }
 );
@@ -92,10 +110,16 @@ export const resetPassword = createAsyncThunk(
         new_password: newPassword,
       });
       return response.data;
-    } catch (error: any) {
-      return rejectWithValue(
-        error.response?.data?.message || error.message || "An error occurred"
-      );
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(
+          error.response?.data?.message || error.message || "An error occurred"
+        );
+      } else if (error instanceof Error) {
+        return rejectWithValue(error.message);
+      } else {
+        return rejectWithValue("An error occurred");
+      }
     }
   }
 );
