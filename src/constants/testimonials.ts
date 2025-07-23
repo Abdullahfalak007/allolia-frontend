@@ -1,5 +1,5 @@
 // src/constants/testimonials.ts
-import { images, icons } from "./images";
+import { images } from "./images";
 
 export interface Testimonial {
   id: number;

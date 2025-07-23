@@ -1,6 +1,6 @@
 // src/components/footer/Footer.tsx
 import React from "react";
-import { logos, icons, images } from "../../constants/images";
+import { logos, icons } from "../../constants/images";
 
 const Footer: React.FC = () => (
   <footer className="bg-secondary text-white">
